@@ -1,0 +1,11 @@
+- name: install docker apt key
+  apt_key: url=http://nginx.org/keys/nginx_signing.key state=present
+
+- name: install docker repository
+  apt_repository: repo='deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable' state=present update_cache='yes'
+
+- name: install docker
+  command: apt-cache policy docker-ce
+
+- name: Add user to docker
+  command: usermod -a -G docker drew
