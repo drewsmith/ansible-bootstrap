@@ -7,7 +7,7 @@
       changed_when: False
 
   tasks:
-    - include: tasks/users.yaml
-    - include: tasks/docker.yaml
-    - include: tasks/packages.yaml
-    - include: tasks/gnome.yaml
+    - include: tasks/users.yml
+    - include: tasks/docker.yml
+    - include: tasks/packages.yml
+    - include: tasks/gnome.yml
