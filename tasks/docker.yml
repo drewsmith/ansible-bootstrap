@@ -1,6 +1,6 @@
 - name: install docker apt key
   apt_key:
-    https://download.docker.com/linux/ubuntu/gpg
+    url: https://download.docker.com/linux/ubuntu/gpg
     state: present
 
 
