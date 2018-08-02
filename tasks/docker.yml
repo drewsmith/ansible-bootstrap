@@ -1,5 +1,5 @@
 - name: install docker apt key
-  apt_key: url=http://nginx.org/keys/nginx_signing.key state=present
+  command: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 - name: install docker repository
   command: add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
