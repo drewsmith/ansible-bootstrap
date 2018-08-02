@@ -4,11 +4,8 @@
 - name: install docker repository
   command: apt-add-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
-- name: update apt
-  apt: update
-
-- name: install docker
-  command: apt-cache policy docker-ce
+- name: update apt and install docker
+  command: apt update && apt-cache policy docker-ce
 
 - name: Add user to docker
   command: usermod -a -G docker drew
