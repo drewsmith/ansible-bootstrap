@@ -2,7 +2,7 @@
   apt_key: url=http://nginx.org/keys/nginx_signing.key state=present
 
 - name: install docker repository
-  command: add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  command: add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
 
 - name: update apt and install docker
   command: apt update && apt-cache policy docker-ce
